@@ -25,7 +25,7 @@ const formSchema = z.object({
 });
 
 function Login() {
-  document.title = "Login";
+  document.title = "Login | User System";
   const navigate = useNavigate();
   const [isVisible, setIsVisible] = useState(false);
   const { login } = useAuth();
@@ -75,11 +75,7 @@ function Login() {
                 <FormItem>
                   <FormLabel>Email</FormLabel>
                   <FormControl>
-                    <Input
-                      autoComplete="off"
-                      placeholder="me@example.com"
-                      {...field}
-                    />
+                    <Input placeholder="me@example.com" {...field} />
                   </FormControl>
                   <FormMessage>
                     {form.formState.errors.email?.message}

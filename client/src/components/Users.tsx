@@ -5,7 +5,7 @@ import { DataTable } from "./table/data-table";
 import { columns } from "./table/columns";
 
 function Users() {
-  document.title = "All users";
+  document.title = "All users | User System";
   const [users, setUsers] = useState([]);
 
   useEffect(() => {

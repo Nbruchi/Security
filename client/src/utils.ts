@@ -7,7 +7,7 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
-export const BASE_URL = "http://localhost:8080";
+export const BASE_URL = "http://localhost:8090";
 
 export const useAuth = () => {
   const context = useContext(AuthContext);

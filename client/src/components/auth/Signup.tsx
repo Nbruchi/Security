@@ -1,6 +1,6 @@
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
-import { BASE_URL, useAuth } from "../../utils";
+import { BASE_URL } from "../../utils";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
@@ -27,9 +27,8 @@ const formSchema = z.object({
     .min(6, { message: "Password must be at least 6 characters" }),
 });
 
-function Signup() {
-  document.title = "Signup";
-  const { login } = useAuth();
+const Signup = () => {
+  document.title = "Signup | User System";
   const navigate = useNavigate();
   const [isVisible, setIsVisible] = useState(false);
   const form = useForm<z.infer<typeof formSchema>>({
@@ -46,7 +45,6 @@ function Signup() {
       const response = await axios.post(`${BASE_URL}/auth/signup`, values);
       localStorage.setItem("jwtToken", response.data.token);
       // Redirect to users page or handle login success
-      login();
       navigate("/login");
       console.log(response.data);
     } catch (error) {
@@ -79,11 +77,7 @@ function Signup() {
                 <FormItem>
                   <FormLabel>Full Names</FormLabel>
                   <FormControl>
-                    <Input
-                      autoComplete="off"
-                      placeholder="John Doe"
-                      {...field}
-                    />
+                    <Input placeholder="John Doe" {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -96,11 +90,7 @@ function Signup() {
                 <FormItem>
                   <FormLabel>Email</FormLabel>
                   <FormControl>
-                    <Input
-                      autoComplete="off"
-                      placeholder="me@example.com"
-                      {...field}
-                    />
+                    <Input placeholder="me@example.com" {...field} />
                   </FormControl>
 
                   <FormMessage />
@@ -146,6 +136,6 @@ function Signup() {
       </div>
     </section>
   );
-}
+};
 
 export default Signup;

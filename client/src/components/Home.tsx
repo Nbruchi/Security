@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 const Home = () => {
-  document.title = "Home";
+  document.title = "Home | User System";
 
   return (
     <section className="flex flex-col items-center justify-center w-full h-screen">

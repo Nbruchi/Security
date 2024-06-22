@@ -5,7 +5,7 @@ import { BASE_URL } from "../utils";
 import { User } from "../../Types";
 
 function UserDetails() {
-  document.title = "Profile";
+  document.title = "Profile | User System";
   const [user, setUser] = useState<User>({} as User);
 
   useEffect(() => {
@@ -29,11 +29,9 @@ function UserDetails() {
     <section className="w-full p-10 flex flex-col items-center justify-center">
       <h1 className="text-center text-4xl font-bold text-blue-400 my-4">
         User Details
-          </h1>
-          
-          <article>
-              
-          </article>
+      </h1>
+
+      <article></article>
     </section>
   );
 }

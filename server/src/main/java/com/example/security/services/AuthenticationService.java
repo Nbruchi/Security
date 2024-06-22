@@ -31,7 +31,11 @@ public class AuthenticationService {
     }
 
     public UserData signup(RegisterUserDto input) {
-        UserData user = new UserData(input.getFullName(), input.getEmail(), passwordEncoder.encode(input.getPassword()));
+        UserData user = new UserData(
+                input.getFullName(),
+                input.getEmail(),
+                passwordEncoder.encode(input.getPassword())
+        );
 
         return userRepository.save(user);
     }
